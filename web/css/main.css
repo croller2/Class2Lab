@@ -4,3 +4,8 @@ body{
     margin-top: 25px;
     margin-bottom: 25px;
 }
+
+.error{
+    background-color: #f9cccc;
+    border:2px solid red;
+}

@@ -23,7 +23,7 @@ import model.WelcomeService;
 public class Greeting extends HttpServlet {
 
     private WelcomeService ws = new WelcomeService();
-
+    private final String NO_NAME_ENTRY = "You didn't enter anything!";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,8 +37,9 @@ public class Greeting extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String name = request.getParameter("name");
-        String greeting = ws.getGreeting(name);
+        String name = request.getParameter("name").trim();
+        //TODO: This should really send
+        String greeting = (name == null || name.length() == 0) ?  NO_NAME_ENTRY : ws.getGreeting(name);
         request.setAttribute("greeting", greeting);
         RequestDispatcher view
                 = request.getRequestDispatcher("/response.jsp");

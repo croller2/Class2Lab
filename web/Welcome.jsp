@@ -8,28 +8,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="js/bootstrap.js" type="text/javascript"></script>
 
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>        
-        <link href="css/main.css" rel="stylesheet" type="text/css"/>
+        <!-- Use Partial Pages to load js and css libraries and pages !-->
+        <jsp:include page="js/js.jsp" />
+        <jsp:include page="css/css.jsp" />
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Welcome!</title>
     </head>
     <body>
         <div class="container">
-            
-            <h2 class="text-center">Welcome! </h2>
-            <div class="row">
-                <div class="col-xs-6 col-xs-offset-3">
-                    <form method="POST"  action="Greeting" name="nameForm">
-                        <div class="form-group">
-                            <label for="name">Name: </label>
-                            <input type="text" class="form-control" id="name" name="name">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>   
+            <div class="row justify-content-center">    
+                <div class="col-12">                
+                    <h2 class="text-center">Welcome to Java!</h2>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <div class="col col-6 col">
+                    <div class="well well-lg">                    
+                        <form method="POST"  action="Greeting" name="nameForm">
+                            <div class="form-group">
+                                <label for="name">Name: </label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="John Smith">
+                            </div>
+                            <button id="submitName" type="submit" class="btn btn-primary">Submit</button>
+                        </form> 
+                    </div>
+                </div>
+            </div>    
         </div>
 
     </body>

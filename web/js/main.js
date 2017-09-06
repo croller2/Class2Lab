@@ -5,13 +5,14 @@
  */
 
 $(document).ready(function(){
-    alert("Window ready");
     $("#name").on("focusout", function() {
-        alert("Focus out");
         if ($(this).val() === "" || $(this).val().length === 0){
             $("#name").addClass("error");
+            $("#submitName").prop("disabled",true);
+            $(this).attr("placeholder", "Please enter a name");
         }else{
             $("#name").removeClass("error");
+            $("#submitName").prop("disabled",false);
         }      
     });
 });
