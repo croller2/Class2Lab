@@ -10,8 +10,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="css/main.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <table style='border: 1px black solid'>
+        <% for(int row = 0 ; row < 3 ; row++){%>
+                <tr>
+                    <%for(int col = 0 ; col<3; col++){%>
+                    <td style='border: 1px black solid'> row: <%= (row+1)%> col: <%=(col + 1)%>  </td>
+                <%}%>
+                </tr>
+            <%}%>
+        </table    
+        
+        <hr>
+        
         <table style='border: 1px black solid'>
         <% 
             String table = "";
@@ -24,6 +37,11 @@
             }
             out.print(table);
         %>
+        </table>
+        
+        <hr>
+        <table style='border: 1px black solid'>
+        <%= table%>
         </table>
     </body>
 </html>
