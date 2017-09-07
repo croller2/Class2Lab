@@ -6,7 +6,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,13 +32,13 @@ public class Greeting extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String name = request.getParameter("name").trim();
-        //TODO: This should really send
-        String greeting = (name == null || name.length() == 0) ?  NO_NAME_ENTRY : ws.getGreeting(name);
+        String firstName = request.getParameter("firstName").trim();
+        String lastName = request.getParameter("lastName").trim();
+        String greeting = (ws.validateNames(firstName, lastName)) ?  ws.getGreeting(firstName, lastName): NO_NAME_ENTRY ;
+        
         request.setAttribute("greeting", greeting);
         RequestDispatcher view
                 = request.getRequestDispatcher("/response.jsp");
