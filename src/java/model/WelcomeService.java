@@ -30,10 +30,15 @@ public class WelcomeService {
         return timePeriod;
     } 
     
-    public String getGreeting(String name){
-        return SALUTATION + getTimePeriod() + ", " + name + ". Welcome!";
-        
-        
+    public final String getGreeting(String firstName, String lastName){
+        return SALUTATION + getTimePeriod() + ", " + firstName + " " + lastName + ". Welcome!";  
+    }
+    
+    public final boolean validateNames(String firstName, String lastName){
+        if(firstName == null || firstName.length() == 0 || lastName == null || lastName.length() == 0){
+            return false;
+        }
+        return true;
     }
     
     
