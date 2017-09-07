@@ -5,14 +5,52 @@
  */
 
 $(document).ready(function(){
-    $("#name").on("focusout", function() {
+    $("#firstName").on("focusout", function() {
         if ($(this).val() === "" || $(this).val().length === 0){
-            $("#name").addClass("error");
+            $("#firstName").addClass("error");
             $("#submitName").prop("disabled",true);
-            $(this).attr("placeholder", "Please enter a name");
+            $(this).attr("placeholder", "Please enter a first name");
         }else{
-            $("#name").removeClass("error");
+            $("#firstName").removeClass("error");
             $("#submitName").prop("disabled",false);
+        }      
+    });
+    
+    $("#lastName").on("focusout", function() {
+        if ($(this).val() === "" || $(this).val().length === 0){
+            $("#lastName").addClass("error");
+            $("#submitName").prop("disabled",true);
+            $(this).attr("placeholder", "Please enter a last name");
+        }else{
+            $("#lastName").removeClass("error");
+            $("#submitName").prop("disabled",false);
+        }      
+    });
+    
+    $("#userEmail").on("focusout", function() {
+        if ($(this).val() === "" || $(this).val().length === 0){
+            $("#userEmail").addClass("error");
+            $("#submitName").prop("disabled",true);
+            $(this).attr("placeholder", "Please enter a valid email");
+        }
+        else{
+            var hasAtSign = false;
+            
+            for(var char = 0; char < $(this).length ; char++){
+                if(($(this).toArray[char] === '@')){
+                    hasAtSign = true;
+                }
+            }  
+            if(hasAtSign){
+                $("#userEmail").removeClass("error");
+                $("#submitName").prop("disabled",false);
+            }else{
+                $("#userEmail").addClass("error");
+                $("#submitName").prop("disabled",true);
+                $(this).attr("placeholder", "Looks like your email doesn't contain an @ symbol");
+            }
+            
+
         }      
     });
 });
