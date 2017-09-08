@@ -8,15 +8,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
         <!-- Use Partial Pages to load js and css libraries and pages !-->
         <jsp:include page="js/js.jsp" />
         <jsp:include page="css/css.jsp" />
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
         <title>Welcome!</title>
     </head>
     <body>
+        <jsp:include page="navbar.jsp" />
         <div class="container">
             <div class="row justify-content-center">    
                 <div class="col-12">                
@@ -28,10 +32,18 @@
                     <div class="well well-lg">                    
                         <form method="POST"  action="Greeting" name="nameForm">
                             <div class="form-group">
-                                <label for="name">Name: </label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="John Smith">
+                                <label for="firstName">First Name: </label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="John" required tabindex="1" autofocus>
                             </div>
-                            <button id="submitName" type="submit" class="btn btn-primary">Submit</button>
+                            <div class="form-group">
+                                <label for="lastName">Last Name: </label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Smith" required tabindex="2">
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail">Email: </label>
+                                <input type="email" class="form-control" id="userEmail" name="userEmail" placeholder="hello@123.com" required tabindex="3">
+                            </div>
+                            <button id="submitName" type="submit" class="btn btn-primary" tabindex="4">Submit</button>
                         </form> 
                     </div>
                 </div>
