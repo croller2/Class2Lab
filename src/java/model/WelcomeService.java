@@ -20,9 +20,9 @@ public class WelcomeService {
     private String getTimePeriod(){
         String timePeriod = "";
         int hours = CURRENTDATE.get(Calendar.HOUR_OF_DAY);
-        if(hours > 0 && hours < 1200){
+        if(hours > 0 && hours < 12){
             timePeriod = "morning";
-        }else if(hours>= 1200 && hours <1700){
+        }else if(hours>= 1200 && hours <17){
             timePeriod = "afternoon";
         }else{
             timePeriod = "evening";

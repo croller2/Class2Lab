@@ -39,10 +39,6 @@
                                 <label for="lastName">Last Name: </label>
                                 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Smith" required tabindex="2">
                             </div>
-                            <div class="form-group">
-                                <label for="userEmail">Email: </label>
-                                <input type="email" class="form-control" id="userEmail" name="userEmail" placeholder="hello@123.com" required tabindex="3">
-                            </div>
                             <button id="submitName" type="submit" class="btn btn-primary" tabindex="4">Submit</button>
                         </form> 
                     </div>

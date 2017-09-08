@@ -10,9 +10,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link href="css/main.css" rel="stylesheet" type="text/css"/>
+        <!-- Use Partial Pages to load js and css libraries and pages !-->
+        <jsp:include page="js/js.jsp" />
+        <jsp:include page="css/css.jsp" />
     </head>
     <body>
+        <jsp:include page="navbar.jsp" />
         <table style='border: 1px black solid'>
         <% for(int row = 0 ; row < 3 ; row++){%>
                 <tr>
